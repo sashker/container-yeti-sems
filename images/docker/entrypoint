@@ -1,0 +1,9 @@
+#!/bin/bash -l
+#Make our script a little bit safer
+set -eo pipefail
+
+if [[ $DEBUG ]]; then
+    exec gosu $USER sems -E -D3
+else
+    exec gosu $USER sems -f /etc/sems/sems.conf -D $LOG_LEVEL -P /tmp/sems.pid -u $USER -g $USER
+fi
