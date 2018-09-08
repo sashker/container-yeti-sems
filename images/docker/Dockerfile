@@ -3,6 +3,10 @@ FROM telephoneorg/debian:jessie as builder
 COPY install_build.sh /tmp/install_build.sh
 RUN /tmp/install_build.sh
 
+ARG SEMS_VERSION=1.7.72-3
+ARG SEMS_YETI_VERSION=1.7.33-3p8
+ARG MANAGEMENT_VERSION=1.2.1
+
 #Build
 COPY build.sh /tmp/build.sh
 RUN /tmp/build.sh
@@ -11,6 +15,10 @@ RUN /tmp/build.sh
 FROM telephoneorg/debian:jessie
 
 LABEL maintainer="Alexander Mustafin <mustafin.aleksandr@gmail.com>"
+
+ARG SEMS_VERSION=1.7.72-3
+ARG SEMS_YETI_VERSION=1.7.33-3p8
+ARG MANAGEMENT_VERSION=1.2.1
 
 ENV APP sems
 ENV USER $APP
@@ -21,7 +29,7 @@ ENV SIP_PORT 5061
 ENV SIP_PUBLIC_ADDRESS eth0
 ENV RTP_LOW_PORT 16000
 ENV RTP_HIGH_PORT 32000
-ENV PLUGINS "wav;ilbc;speex;gsm;adpcm;l16;g722;yeti;session_timer;uac_auth;di_log;registrar_client;jsonrpc"
+ENV PLUGINS "wav;ilbc;speex;gsm;adpcm;l16;g722;sctp_bus;yeti;session_timer;uac_auth;di_log;registrar_client;jsonrpc"
 ENV FORK yes
 ENV STDERR no
 ENV REGISTRATION no

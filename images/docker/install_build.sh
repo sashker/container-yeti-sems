@@ -36,6 +36,11 @@ apt-get install -yqq \
     libnanomsg-dev \
     debhelper \
     pkg-kde-tools \
+    libc-ares-dev \
+    libkrb5-dev \
+    autoconf \
+    automake \
+    libtool \
     git
 
 # if applicable, clean up after detect-proxy enable
