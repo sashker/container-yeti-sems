@@ -36,7 +36,7 @@ env
 dpkg -i libsems1_${SEMS_VERSION}_amd64.deb
 dpkg -i sems_${SEMS_VERSION}_amd64.deb
 dpkg -i sems-sounds_${SEMS_VERSION}_amd64.deb
-dpkg -i libyeticc_{$MANAGEMENT_VERSION}_amd64.deb
+dpkg -i libyeticc_${MANAGEMENT_VERSION}_amd64.deb
 dpkg -i sems-modules-base_${SEMS_VERSION}_amd64.deb
 dpkg -i sems-modules-yeti_${SEMS_YETI_VERSION}_amd64.deb
 
