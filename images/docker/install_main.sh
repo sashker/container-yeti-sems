@@ -34,21 +34,11 @@ log::m-info "Installing packages ..."
 cd /tmp
 env
 dpkg -i libsems1_${SEMS_VERSION}_amd64.deb
-dpkg -i sems_1.7.72-3_amd64.deb
-dpkg -i sems-sounds_1.7.72-3_amd64.deb
-dpkg -i libyeticc_1.2.1_amd64.deb
-dpkg -i sems-modules-base_1.7.72-3_amd64.deb
-dpkg -i sems-modules-yeti_1.7.33-3p8_amd64.deb
-
-#-rw-r--r-- 1 root root  248936 Aug 29 02:58 libsems1-dev_1.7.72-3_amd64.deb
-#-rw-r--r-- 1 root root 6135608 Aug 29 02:58 libsems1_1.7.72-3_amd64.deb
-#-rw-r--r-- 1 root root    2018 Aug 29 02:58 libyeticc-dev_1.2.1_amd64.deb
-#-rw-r--r-- 1 root root   30818 Aug 29 02:58 libyeticc_1.2.1_amd64.deb
-#-rw-r--r-- 1 root root 4065154 Aug 29 02:57 sems-modules-base_1.7.72-3_amd64.deb
-#-rw-r--r-- 1 root root 5123624 Aug 29 03:04 sems-modules-yeti_1.7.33-3p8_amd64.deb
-#-rw-r--r-- 1 root root  308724 Aug 29 02:57 sems-sounds_1.7.72-3_amd64.deb
-#-rw-r--r-- 1 root root  805452 Aug 29 02:57 sems_1.7.72-3_amd64.deb
-#-rw-r--r-- 1 root root   96406 Aug 29 02:58 yeti-management_1.2.1_amd64.deb
+dpkg -i sems_${SEMS_VERSION}_amd64.deb
+dpkg -i sems-sounds_${SEMS_VERSION}_amd64.deb
+dpkg -i libyeticc_{$MANAGEMENT_VERSION}_amd64.deb
+dpkg -i sems-modules-base_${SEMS_VERSION}_amd64.deb
+dpkg -i sems-modules-yeti_${SEMS_YETI_VERSION}_amd64.deb
 
 #Patch which creates directories if they don't exist
 log::m-info "Creating necessary directories..."
@@ -70,7 +60,7 @@ use_raw_sockets=no #глобально включаем raw сокеты есл�
 sip_ip_first=$SIP_ADDRESS
 public_ip_first=$SIP_PUBLIC_ADDRESS
 sip_port_first=$SIP_PORT
-#sig_sock_opts_input = use_raw_sockets # на интерфейсе input для отсылки сигнализации raw сокеты не будут использоваться
+#sig_sock_opts_input = use_raw_sockets
 media_ip_first=$SIP_ADDRESS
 rtp_low_port_first=$RTP_LOW_PORT
 rtp_high_port_first=$RTP_HIGH_PORT

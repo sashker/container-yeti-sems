@@ -3,7 +3,7 @@ FROM telephoneorg/debian:jessie as builder
 COPY install_build.sh /tmp/install_build.sh
 RUN /tmp/install_build.sh
 
-ARG SEMS_VERSION=1.7.72-3
+ARG SEMS_VERSION=1.7.72-4
 ARG SEMS_YETI_VERSION=1.7.33-3p8
 ARG MANAGEMENT_VERSION=1.2.1
 
@@ -16,7 +16,7 @@ FROM telephoneorg/debian:jessie
 
 LABEL maintainer="Alexander Mustafin <mustafin.aleksandr@gmail.com>"
 
-ARG SEMS_VERSION=1.7.72-3
+ARG SEMS_VERSION=1.7.72-4
 ARG SEMS_YETI_VERSION=1.7.33-3p8
 ARG MANAGEMENT_VERSION=1.2.1
 
