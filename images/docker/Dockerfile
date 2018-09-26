@@ -4,7 +4,7 @@ COPY install_build.sh /tmp/install_build.sh
 RUN /tmp/install_build.sh
 
 ARG SEMS_VERSION=1.7.72-6
-ARG SEMS_YETI_VERSION=1.7.33-3p8
+ARG SEMS_YETI_VERSION=1.7.34-1
 ARG MANAGEMENT_VERSION=1.2.1
 
 #Build
@@ -17,7 +17,7 @@ FROM telephoneorg/debian:jessie
 LABEL maintainer="Alexander Mustafin <mustafin.aleksandr@gmail.com>"
 
 ARG SEMS_VERSION=1.7.72-6
-ARG SEMS_YETI_VERSION=1.7.33-3p8
+ARG SEMS_YETI_VERSION=1.7.34-1
 ARG MANAGEMENT_VERSION=1.2.1
 
 ENV APP sems
@@ -32,7 +32,7 @@ ENV SEMS_RTP_HIGH_PORT 32000
 ENV SEMS_PLUGINS "wav;ilbc;speex;gsm;adpcm;l16;g722;sctp_bus;yeti;session_timer;uac_auth;di_log;registrar_client;jsonrpc"
 ENV SEMS_FORK yes
 ENV SEMS_STDERR no
-ENV SEMS_REGISTRATION no
+ENV SEMS_REGISTRATIONS_ENABLED no
 ENV SEMS_MANAGEMENT_IP 127.0.0.1
 ENV SEMS_MANAGEMENT_PORT 4444
 ENV SEMS_MANAGEMENT_TIMEOUT 1000

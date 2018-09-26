@@ -13,7 +13,7 @@ application = yeti
 plugin_config_path=/etc/sems/etc/
 fork={{env.Getenv "SEMS_FORK"}}
 stderr={{env.Getenv "SEMS_STDERR"}}
-syslog_loglevel=2
+syslog_loglevel={{env.Getenv "SEMS_LOGLEVEL"}}
 max_shutdown_time = 10
 
 session_processor_threads=20
