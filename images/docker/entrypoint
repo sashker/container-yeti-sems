@@ -2,6 +2,11 @@
 #Make our script a little bit safer
 set -eo pipefail
 
+echo "Building sems configs"
+cat /templates/sems.tmpl | gomplate > /etc/sems/sems.conf
+cat /templates/yeti.tmpl | gomplate > /etc/sems/etc/yeti.conf
+cat /templates/jsonrpc.tmpl | gomplate > /etc/sems/etc/jsonrpc.conf
+
 if [[ $DEBUG ]]; then
     exec gosu $USER sems -E -D3
 else
