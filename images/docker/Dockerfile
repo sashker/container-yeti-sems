@@ -28,7 +28,7 @@ ENV SEMS_SIP_IP eth0
 ENV SEMS_SIP_PORT 5061
 ENV SEMS_SIP_PUBLIC_IP eth0
 ENV SEMS_RTP_LOW_PORT 16000
-ENV SEMS_RTP_HIGH_PORT 32000
+ENV SEMS_RTP_HIGH_PORT 31999
 ENV SEMS_PLUGINS "wav;ilbc;speex;gsm;adpcm;l16;g722;sctp_bus;yeti;session_timer;uac_auth;di_log;registrar_client;jsonrpc"
 ENV SEMS_FORK yes
 ENV SEMS_STDERR no

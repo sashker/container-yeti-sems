@@ -8,7 +8,7 @@ cat /templates/yeti.tmpl | gomplate > /etc/sems/etc/yeti.conf
 cat /templates/jsonrpc.tmpl | gomplate > /etc/sems/etc/jsonrpc.conf
 
 if [[ $DEBUG ]]; then
-    exec gosu $USER sems -E -D3
+    exec sems -E -D3
 else
-    exec gosu $USER sems -f /etc/sems/sems.conf -D $LOG_LEVEL -P /tmp/sems.pid -u $USER -g $USER
+    exec sems -f /etc/sems/sems.conf -D $SEMS_LOG_LEVEL -P /tmp/sems.pid -u $USER -g $USER
 fi
